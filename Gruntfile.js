@@ -59,6 +59,32 @@ module.exports = function(grunt) {
         dest: ".tmp/dataviz.js"
       },
 
+      node: {
+        src: [
+          "src/core/index.js",
+          "src/core/events.js",
+          "src/core/utils/each.js",
+          "src/core/utils/extend.js",
+          "src/core/utils/parseParams.js",
+          "src/core/utils/sendXhr.js",
+          "src/utils/base64.js",
+          "src/utils/json2.js",
+          "src/core/lib/addEvent.js",
+          "src/core/lib/configure.js",
+          "src/core/lib/masterKey.js",
+          "src/core/lib/projectId.js",
+          "src/core/lib/readKey.js",
+          "src/core/lib/writeKey.js",
+          "src/core/lib/url.js",
+          "src/core/lib/setGlobalProperties.js",
+          "src/query.js",
+          "src/node/uploadEvent.js",
+          "src/node/sendQuery.js",
+          "src/node/export.js"
+        ],
+        dest: "dist/<%= pkg.name %>.node.js"
+      },
+
       // Assemble keen.js (full)
       all: {
         options: {

@@ -4,6 +4,8 @@
 * ----------------
 */
 
+var root = this === 'window' ? window : global;
+
 function Keen(config) {
   if (config) {
     this.configure(config);
@@ -22,7 +24,7 @@ if (typeof XMLHttpRequest === "object" || typeof XMLHttpRequest === "function") 
 }
 
 Keen.urlMaxLength = 16000;
-if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+if (root.navigator && (root.navigator.userAgent.indexOf('MSIE') !== -1 || root.navigator.appVersion.indexOf('Trident/') > 0)) {
   Keen.urlMaxLength = 2000;
 }
 
